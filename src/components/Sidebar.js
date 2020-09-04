@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: theme.spacing(5.5),
     borderRight: `1px solid #eeeeee`,
-    height: "calc(100vh - 6rem)",
+    height: "100vh",
     position: "relative",
   },
   brand: {
@@ -90,13 +90,13 @@ const sidebarOptions = [
   { icon: <SettingsOutlinedIcon />, text: "Settings" },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ brand = true }) => {
   const classes = useStyles();
   const [activeItemIdx, setActiveItemIdx] = useState(0);
 
   return (
     <Box className={classes.container}>
-      <Typography className={classes.brand}>S</Typography>
+      {brand && <Typography className={classes.brand}>S</Typography>}
       <List className={classes.list}>
         {sidebarOptions.map((option, idx) => (
           <ListItem

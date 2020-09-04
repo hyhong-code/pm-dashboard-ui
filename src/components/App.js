@@ -1,27 +1,43 @@
 import React from "react";
+import { useTheme, useMediaQuery } from "@material-ui/core";
 
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
+import Hidden from "@material-ui/core/Hidden";
 
+import Drawer from "./Drawer";
 import Sidebar from "./Sidebar";
 import Main from "./Main";
 
 const App = () => {
+  const theme = useTheme();
+  const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
   return (
-    <Box style={{ backgroundColor: "#fff", padding: "3rem" }}>
+    <Box
+      style={{
+        backgroundColor: "#fff",
+      }}
+    >
       <Container>
         <Box
-          style={{
-            boxShadow: "0 27px 78px -48px #709efd",
-            borderRadius: "15px",
-          }}
+          style={
+            lgUp
+              ? {
+                  borderRight: `1px solid #eeeeee`,
+                  borderLeft: `1px solid #eeeeee`,
+                }
+              : undefined
+          }
         >
+          <Drawer />
           <Grid container>
-            <Grid item xs={3}>
-              <Sidebar />
-            </Grid>
-            <Grid item xs={9}>
+            <Hidden mdDown>
+              <Grid item xs={3}>
+                <Sidebar />
+              </Grid>
+            </Hidden>
+            <Grid item xs={12} lg={9}>
               <Main />
             </Grid>
           </Grid>

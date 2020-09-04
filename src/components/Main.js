@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
 
 import Grid from "@material-ui/core/Grid";
 
@@ -12,23 +12,31 @@ const useStyles = makeStyles((theme) => ({
   mainGrid: {
     paddingLeft: theme.spacing(6.25),
     paddingRight: theme.spacing(6.25),
-  },
-  leftGrid: {
-    paddingRight: theme.spacing(6.25),
+    [theme.breakpoints.down("xs")]: {
+      paddingLeft: theme.spacing(0),
+      paddingRight: theme.spacing(0),
+    },
   },
 }));
 
 const Main = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Fragment>
       <Topbar />
       <Grid container className={classes.mainGrid}>
-        <Grid item xs={7} className={classes.leftGrid}>
+        <Grid
+          item
+          xs={12}
+          md={7}
+          style={{ paddingRight: smDown ? undefined : theme.spacing(6.25) }}
+        >
           <Folders />
           <Projects />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={12} md={5}>
           <Tasks />
         </Grid>
       </Grid>

@@ -28,7 +28,7 @@ const Folders = () => {
       </Typography>
       <Grid container spacing={2}>
         {folders.map(({ folderName, notifination }, idx) => (
-          <Grid item xs={4} key={idx}>
+          <Grid item xs={6} sm={4} key={idx}>
             <FolderCard folderName={folderName} notification={notifination} />
           </Grid>
         ))}

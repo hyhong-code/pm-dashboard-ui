@@ -1,10 +1,12 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, useTheme, useMediaQuery } from "@material-ui/core";
 
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
+
+import TopbarSearch from "./TopbarSearch";
 
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -44,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
       transform: `translate(58px, 12px)`,
       ...theme.typography.headerSearch,
       "&.MuiInputLabel-shrink": {
-        transform: `translate(15px, -5px) scale(0.75)`,
+        transform: `translate(14px, -7px) scale(0.75)`,
         color: theme.palette.common.black,
         fontWeight: 700,
       },
@@ -74,19 +76,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Topbar = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const mdUp = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Box className={classes.container}>
-      <Box component="form" className={classes.formControl}>
-        <SearchOutlinedIcon className={classes.searchIcon} />
-        <TextField
-          margin="dense"
-          className={classes.textField}
-          fullWidth
-          variant="outlined"
-          label="Search"
-        />
-      </Box>
+      {mdUp && <TopbarSearch width="21.5rem" />}
       <Box className={classes.right}>
         <IconButton>
           <MailOutlineIcon className={classes.rightIcons} />

@@ -53,6 +53,7 @@ export default createMuiTheme({
       fontSize: 14,
       fontWeight: 700,
       color: black,
+      textTransform: "uppercase",
     },
     mainProjectName: {
       fontSize: 18,

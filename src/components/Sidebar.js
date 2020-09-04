@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
 
 import Box from "@material-ui/core/Box";
@@ -63,6 +63,8 @@ const sidebarOptions = [
 
 const Sidebar = () => {
   const classes = useStyles();
+  const [activeItemIdx, setActiveItemIdx] = useState(0);
+
   return (
     <Box className={classes.container}>
       <Typography className={classes.brand}>S</Typography>
@@ -70,12 +72,13 @@ const Sidebar = () => {
         {sidebarOptions.map((option, idx) => (
           <ListItem
             className={
-              idx === 0
+              idx === activeItemIdx
                 ? [classes.listItemActive, classes.listItem].join(" ")
                 : classes.listItem
             }
             button
             key={idx}
+            onClick={() => setActiveItemIdx(idx)}
           >
             <ListItemIcon className={classes.listIcon}>
               {option.icon}

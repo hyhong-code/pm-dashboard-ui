@@ -29,20 +29,23 @@ const useStyles = makeStyles((theme) => ({
     top: "50%",
     transform: `translateY(-40%)`,
     left: theme.spacing(3),
-    width: 24,
+    fontSize: 24,
     color: `rgba(0,0,0,0.4)`,
   },
   textField: {
     "& .MuiOutlinedInput-root": {
       borderRadius: theme.spacing(8),
       paddingLeft: theme.spacing(4.5),
+      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        borderColor: theme.palette.common.black,
+      },
     },
     "& .MuiInputLabel-outlined": {
       transform: `translate(58px, 12px)`,
       ...theme.typography.headerSearch,
       "&.MuiInputLabel-shrink": {
-        transform: `translate(16px, -5px) scale(0.75)`,
-        color: `#3f51b5`,
+        transform: `translate(15px, -5px) scale(0.75)`,
+        color: theme.palette.common.black,
         fontWeight: 700,
       },
     },

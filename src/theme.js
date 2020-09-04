@@ -33,8 +33,7 @@ export default createMuiTheme({
     },
     headerSearch: {
       fontSize: 16,
-      color: black,
-      opacity: 0.5,
+      color: `rgba(0,0,0,0.5)`,
     },
     sidebarBrand: {
       fontSize: 33,

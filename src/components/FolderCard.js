@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
 const FolderCard = ({ folderName, notification }) => {
   const classes = useStyles();
   return (
-    <Card className={classes.card} raised={false}>
+    <Card className={classes.card}>
       {notification && (
         <Box className={classes.dotContainer}>
           <FiberManualRecordIcon className={classes.dot} />

@@ -4,14 +4,23 @@ import { useTheme, makeStyles } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
+import ProjectCard from "./ProjectCard";
 import FolderCard from "./FolderCard";
 import Topbar from "./Topbar";
+
+import { purple, red, green } from "../theme";
 
 const folders = [
   { folderName: "Invoices", notifination: false },
   { folderName: "Customers", notifination: true },
   { folderName: "Products", notifination: true },
   { folderName: "Services", notifination: false },
+];
+
+const projects = [
+  { projectName: "Sintex", finished: 26, total: 47, color: purple },
+  { projectName: "Tetrion", finished: 7, total: 21, color: red },
+  { projectName: "Petron", finished: 14, total: 16, color: green },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -43,6 +52,27 @@ const Main = () => {
                 <FolderCard
                   folderName={folderName}
                   notification={notifination}
+                />
+              </Grid>
+            ))}
+          </Grid>
+          <Typography
+            style={{
+              ...theme.typography.mainTitle,
+              marginTop: theme.spacing(3),
+              marginBottom: theme.spacing(2),
+            }}
+          >
+            Projects
+          </Typography>
+          <Grid container spacing={3}>
+            {projects.map(({ projectName, finished, total, color }, idx) => (
+              <Grid item xs={6} key={idx}>
+                <ProjectCard
+                  projectName={projectName}
+                  finished={finished}
+                  total={total}
+                  initialColor={color}
                 />
               </Grid>
             ))}

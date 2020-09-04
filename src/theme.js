@@ -1,13 +1,13 @@
 import { createMuiTheme } from "@material-ui/core";
 
-const black = "#0a0e1c";
-const blue = "#4c6ae6";
-const red = "#ff6161";
-const green = "#90c335";
-const purple = "#985bff";
-const white = "#fff";
-const blueLight1 = "#75a4ff";
-const blueLight2 = "#f4f9ff";
+export const black = "#0a0e1c";
+export const blue = "#4c6ae6";
+export const red = "#ff6161";
+export const green = "#90c335";
+export const purple = "#985bff";
+export const white = "#fff";
+export const blueLight1 = "#75a4ff";
+export const blueLight2 = "#f4f9ff";
 
 export default createMuiTheme({
   palette: {

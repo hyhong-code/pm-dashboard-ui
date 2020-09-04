@@ -19,13 +19,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Main = () => {
+const Main = ({ onOpen }) => {
   const classes = useStyles();
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Fragment>
-      <Topbar />
+      <Topbar onOpen={onOpen} />
       <Grid container className={classes.mainGrid}>
         <Grid
           item

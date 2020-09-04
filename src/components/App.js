@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTheme, useMediaQuery } from "@material-ui/core";
 
 import Grid from "@material-ui/core/Grid";
@@ -13,6 +13,8 @@ import Main from "./Main";
 const App = () => {
   const theme = useTheme();
   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   return (
     <Box
       style={{
@@ -30,7 +32,11 @@ const App = () => {
               : undefined
           }
         >
-          <Drawer />
+          <Drawer
+            onClose={() => setDrawerOpen(false)}
+            onOpen={() => setDrawerOpen(true)}
+            open={drawerOpen}
+          />
           <Grid container>
             <Hidden mdDown>
               <Grid item xs={3}>
@@ -38,7 +44,7 @@ const App = () => {
               </Grid>
             </Hidden>
             <Grid item xs={12} lg={9}>
-              <Main />
+              <Main onOpen={() => setDrawerOpen(true)} />
             </Grid>
           </Grid>
         </Box>

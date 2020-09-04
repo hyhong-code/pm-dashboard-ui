@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 import TopbarSearch from "./TopbarSearch";
 
@@ -19,6 +20,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-start",
     paddingLeft: theme.spacing(8.875),
     paddingRight: theme.spacing(6.25),
+    [theme.breakpoints.down("xs")]: {
+      paddingLeft: theme.spacing(0),
+      paddingRight: theme.spacing(0),
+    },
+  },
+  chevron: {
+    color: "#fff",
+    backgroundColor: theme.palette.common.blueLight1,
+    fontSize: 30,
+    borderRadius: 30,
   },
   formControl: {
     width: "21.5rem",
@@ -61,6 +72,9 @@ const useStyles = makeStyles((theme) => ({
   },
   dateTime: {
     marginLeft: theme.spacing(6.875),
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: theme.spacing(2),
+    },
   },
   time: {
     ...theme.typography.headerTime,
@@ -72,13 +86,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Topbar = () => {
+const Topbar = ({ onOpen }) => {
   const classes = useStyles();
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
+  const mdDown = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box className={classes.container}>
+      {mdDown && (
+        <IconButton edge="start" onClick={onOpen}>
+          <ChevronRightIcon className={classes.chevron} />
+        </IconButton>
+      )}
       {mdUp && <TopbarSearch width="21.5rem" />}
       <Box className={classes.right}>
         <IconButton>

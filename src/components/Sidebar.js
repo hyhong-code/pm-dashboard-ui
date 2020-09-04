@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core";
 
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
@@ -90,13 +90,22 @@ const sidebarOptions = [
   { icon: <SettingsOutlinedIcon />, text: "Settings" },
 ];
 
-const Sidebar = ({ brand = true }) => {
+const Sidebar = ({ inDrawer = false }) => {
   const classes = useStyles();
+  const theme = useTheme();
   const [activeItemIdx, setActiveItemIdx] = useState(0);
 
   return (
-    <Box className={classes.container}>
-      {brand && <Typography className={classes.brand}>S</Typography>}
+    <Box
+      className={classes.container}
+      style={inDrawer ? { paddingTop: theme.spacing(1) } : undefined}
+    >
+      <Typography
+        className={classes.brand}
+        style={inDrawer ? { marginBottom: theme.spacing(1) } : undefined}
+      >
+        S
+      </Typography>
       <List className={classes.list}>
         {sidebarOptions.map((option, idx) => (
           <ListItem

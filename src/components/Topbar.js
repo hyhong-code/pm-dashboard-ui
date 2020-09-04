@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   searchIcon: {
     position: "absolute",
     top: "50%",
-    transform: `translateY(-50%)`,
+    transform: `translateY(-40%)`,
     left: theme.spacing(3),
     width: 24,
     color: `rgba(0,0,0,0.4)`,
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: theme.spacing(4.5),
     },
     "& .MuiInputLabel-outlined": {
-      transform: `translate(58px, 20px)`,
+      transform: `translate(58px, 12px)`,
       ...theme.typography.headerSearch,
       "&.MuiInputLabel-shrink": {
         transform: `translate(16px, -5px) scale(0.75)`,
@@ -77,6 +77,7 @@ const Topbar = () => {
       <Box component="form" className={classes.formControl}>
         <SearchOutlinedIcon className={classes.searchIcon} />
         <TextField
+          margin="dense"
           className={classes.textField}
           fullWidth
           variant="outlined"

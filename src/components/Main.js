@@ -3,10 +3,10 @@ import { makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
 
 import Grid from "@material-ui/core/Grid";
 
-import Topbar from "./Topbar";
-import Folders from "./Folders";
-import Projects from "./Projects";
-import Tasks from "./Tasks";
+import Topbar from "./ui/Topbar";
+import Folders from "./folders/Folders";
+import Projects from "./projects/Projects";
+import Tasks from "./tasks/Tasks";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {

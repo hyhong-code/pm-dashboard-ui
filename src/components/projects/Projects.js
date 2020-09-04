@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 import ProjectCard from "./ProjectCard";
-import { purple, red, green } from "../theme";
+import { purple, red, green } from "../../theme";
 
 const projects = [
   { projectName: "Sintex", finished: 26, total: 47, color: purple },

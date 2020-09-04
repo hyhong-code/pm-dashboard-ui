@@ -17,7 +17,7 @@ import NoteOutlinedIcon from "@material-ui/icons/NoteOutlined";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
-import avatar from "../assets/avatar.jpg";
+import avatar from "../../assets/avatar.jpg";
 
 const useStyles = makeStyles((theme) => ({
   container: {

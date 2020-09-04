@@ -6,7 +6,7 @@ import List from "@material-ui/core/List";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 
-import { red, green, purple } from "../theme";
+import { red, green, purple } from "../../theme";
 import TaskItem from "./TaskItem";
 
 const useStyles = makeStyles((theme) => ({

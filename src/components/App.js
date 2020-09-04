@@ -6,8 +6,8 @@ import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Hidden from "@material-ui/core/Hidden";
 
-import Drawer from "./Drawer";
-import Sidebar from "./Sidebar";
+import Drawer from "./ui/Drawer";
+import Sidebar from "./ui/Sidebar";
 import Main from "./Main";
 
 const App = () => {

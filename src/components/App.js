@@ -28,8 +28,9 @@ const App = () => {
               ? {
                   borderRight: `1px solid #eeeeee`,
                   borderLeft: `1px solid #eeeeee`,
+                  minHeight: "100vh",
                 }
-              : undefined
+              : { minHeight: "100vh" }
           }
         >
           <Drawer

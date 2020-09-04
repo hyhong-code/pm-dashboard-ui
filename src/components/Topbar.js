@@ -2,15 +2,13 @@ import React from "react";
 import { makeStyles, useTheme, useMediaQuery } from "@material-ui/core";
 
 import Box from "@material-ui/core/Box";
-import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 
-import TopbarSearch from "./TopbarSearch";
-
-import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
+
+import TopbarSearch from "./TopbarSearch";
 
 const useStyles = makeStyles((theme) => ({
   container: {

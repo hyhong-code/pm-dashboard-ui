@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({}));
 
 const Drawer = ({ open, onClose, onOpen }) => {
   const classes = useStyles();
+
   return (
     <SwipeableDrawer
       anchor="left"

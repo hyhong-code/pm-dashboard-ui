@@ -1,9 +1,8 @@
 import React, { Fragment } from "react";
-import { useTheme, makeStyles } from "@material-ui/core";
+import { useTheme, makeStyles, useMediaQuery } from "@material-ui/core";
 
 import Typography from "@material-ui/core/Typography";
 import List from "@material-ui/core/List";
-
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 
@@ -55,12 +54,15 @@ const tasks = [
 const Tasks = () => {
   const theme = useTheme();
   const classes = useStyles();
+  const mdDown = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Fragment>
       <Typography
         style={{
           ...theme.typography.mainTitle,
           marginBottom: theme.spacing(2),
+          marginTop: mdDown ? theme.spacing(2) : undefined,
         }}
       >
         Your Tasks

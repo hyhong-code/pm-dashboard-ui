@@ -15,6 +15,7 @@ const projects = [
 
 const Projects = () => {
   const theme = useTheme();
+
   return (
     <Fragment>
       <Typography

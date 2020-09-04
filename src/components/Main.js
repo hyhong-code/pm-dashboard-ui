@@ -10,11 +10,11 @@ import Tasks from "./Tasks";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
-    paddingLeft: theme.spacing(8.875),
-    paddingRight: theme.spacing(8.875),
+    paddingLeft: theme.spacing(6.25),
+    paddingRight: theme.spacing(6.25),
   },
   leftGrid: {
-    paddingRight: theme.spacing(8.875),
+    paddingRight: theme.spacing(6.25),
   },
 }));
 

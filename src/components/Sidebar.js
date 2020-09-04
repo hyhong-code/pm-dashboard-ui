@@ -7,18 +7,24 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import Avatar from "@material-ui/core/Avatar";
+import IconButton from "@material-ui/core/IconButton";
 
 import ShowChartOutlinedIcon from "@material-ui/icons/ShowChartOutlined";
 import FolderOutlinedIcon from "@material-ui/icons/FolderOutlined";
 import AssignmentTurnedInOutlinedIcon from "@material-ui/icons/AssignmentTurnedInOutlined";
 import NoteOutlinedIcon from "@material-ui/icons/NoteOutlined";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+
+import avatar from "../assets/avatar.jpg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: theme.spacing(5.5),
     borderRight: `1px solid #eeeeee`,
-    height: "100vh",
+    height: "calc(100vh - 6rem)",
+    position: "relative",
   },
   brand: {
     ...theme.typography.sidebarBrand,
@@ -50,6 +56,29 @@ const useStyles = makeStyles((theme) => ({
   },
   listText: {
     ...theme.typography.sidebarName,
+  },
+  userBox: {
+    height: 100,
+    borderTop: `1px solid #eeeeee`,
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingLeft: 35,
+    paddingRight: 35,
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+  userName: {
+    ...theme.typography.sidebarName,
+    marginLeft: 10,
+  },
+  chevIcon: {
+    color: theme.palette.common.blue,
+    backgroundColor: theme.palette.common.blueLight2,
+    borderRadius: "1rem",
+    fontSize: "1.8rem",
   },
 }));
 
@@ -87,6 +116,13 @@ const Sidebar = () => {
           </ListItem>
         ))}
       </List>
+      <Box className={classes.userBox}>
+        <Avatar src={avatar} style={{ width: 45, height: 45 }} />
+        <Typography className={classes.userName}>Devin Lee</Typography>
+        <IconButton style={{ marginLeft: "auto" }}>
+          <ChevronRightIcon className={classes.chevIcon} />
+        </IconButton>
+      </Box>
     </Box>
   );
 };

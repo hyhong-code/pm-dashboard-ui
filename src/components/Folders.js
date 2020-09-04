@@ -26,7 +26,7 @@ const Folders = () => {
       >
         Recent Folders
       </Typography>
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         {folders.map(({ folderName, notifination }, idx) => (
           <Grid item xs={4} key={idx}>
             <FolderCard folderName={folderName} notification={notifination} />

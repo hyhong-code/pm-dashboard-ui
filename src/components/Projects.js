@@ -26,7 +26,7 @@ const Projects = () => {
       >
         Projects
       </Typography>
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         {projects.map(({ projectName, finished, total, color }, idx) => (
           <Grid item xs={6} key={idx}>
             <ProjectCard
